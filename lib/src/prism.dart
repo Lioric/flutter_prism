@@ -5,7 +5,7 @@ import 'package:flutter/services.dart';
 import 'style.dart';
 
 class TokenTextSpan extends TextSpan {
-  final String type;
+  final String? type; // Token Type (null if it is a Text token node)
 
   const TokenTextSpan({
       required this.type,
