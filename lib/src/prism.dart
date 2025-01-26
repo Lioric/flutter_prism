@@ -4,6 +4,18 @@ import 'package:flutter/services.dart';
 
 import 'style.dart';
 
+class TokenTextSpan extends TextSpan {
+  final String type;
+
+  const TokenTextSpan({
+      required this.type,
+      required super.text,
+      required super.children,
+      required super.style,
+      required super.mouseCursor
+  });
+}
+
 /// Creates a [Prism].
 class Prism {
   Prism({
@@ -61,7 +73,8 @@ class Prism {
       }
     }
 
-    return TextSpan(
+    return TokenTextSpan(
+      type: node.type,
       text: text,
       children: children,
       style: style,
